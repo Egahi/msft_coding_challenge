@@ -51,13 +51,11 @@ int main(int argc, char *argv[])
 
     // Read first character in file
     // represents the number of strings in the file
-    char clines = fgetc(infile);
-
-    // convert to an integer
-    int lines = atoi(&clines);
+    int lines = 0;
+    fscanf(infile, "%i", &lines);
 
     // print number of strings to output
-    fputc(clines, outfile);
+    fprintf(outfile, "%i", lines);
 
     char word[LENGTH];
     int frequency = 1;
